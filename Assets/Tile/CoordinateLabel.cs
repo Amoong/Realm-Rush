@@ -7,12 +7,19 @@ using UnityEngine;
 [ExecuteAlways]
 public class CoordinateLabel : MonoBehaviour
 {
+    [SerializeField] Color defaultColor = Color.white;
+    [SerializeField] Color blockedColor = Color.gray;
+
     TextMeshPro label;
     Vector2Int coordinates = new Vector2Int();
+    Waypoint waypoint;
 
     void Awake()
     {
         label = GetComponent<TextMeshPro>();
+        label.enabled = false;
+
+        waypoint = GetComponentInParent<Waypoint>();
         DisplayCoordinates();
     }
 
@@ -22,6 +29,27 @@ public class CoordinateLabel : MonoBehaviour
         {
             DisplayCoordinates();
             UpdateObjectName();
+        }
+
+        ColorCoordinates();
+        ToggleLabels();
+    }
+
+    void ColorCoordinates()
+    {
+        if (!waypoint)
+        {
+            return;
+        }
+
+        label.color = waypoint.IsPlaceable ? defaultColor : blockedColor;
+    }
+
+    void ToggleLabels()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            label.enabled = !label.enabled;
         }
     }
 
