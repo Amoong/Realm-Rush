@@ -7,9 +7,9 @@ public class Waypoint : MonoBehaviour
     [SerializeField] bool isPlaceable;
     public bool IsPlaceable { get { return isPlaceable; } }
 
-
     void OnMouseDown()
     {
+        Debug.Log("Mouse down");
         if (isPlaceable)
         {
             bool isPlaced = towerPrefab.CreateTower(towerPrefab, transform);
