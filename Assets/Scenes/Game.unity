@@ -20699,7 +20699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCoordinates: {x: 3, y: 3}
-  destinationCoordinates: {x: 1, y: 0}
+  destinationCoordinates: {x: 6, y: 0}
 --- !u!1001 &1692934257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26241,6 +26241,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2566669773459014195, guid: 91e19c5bd515ac340ad96d8993a99378, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225126794666510644, guid: 91e19c5bd515ac340ad96d8993a99378, type: 3}
+      propertyPath: poolSize
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225126794666510644, guid: 91e19c5bd515ac340ad96d8993a99378, type: 3}

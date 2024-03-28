@@ -23,6 +23,31 @@ public class GridManager : MonoBehaviour
         return null;
     }
 
+    public void BlockNode(Vector2Int coordinates)
+    {
+        if (grid.ContainsKey(coordinates))
+        {
+            grid[coordinates].isWalkable = false;
+        }
+    }
+
+    public Vector2Int GetCoordinatesFromPosition(Vector3 position)
+    {
+        return new Vector2Int(
+            Mathf.RoundToInt(position.x / UnityEditor.EditorSnapSettings.move.x),
+            Mathf.RoundToInt(position.z / UnityEditor.EditorSnapSettings.move.z)
+        );
+    }
+
+    public Vector3 GetPositionFromCoordinates(Vector2Int coordinates)
+    {
+        return new Vector3(
+            coordinates.x * UnityEditor.EditorSnapSettings.move.x,
+            0,
+            coordinates.y * UnityEditor.EditorSnapSettings.move.z
+        );
+    }
+
     void CreateGrid()
     {
         for (int x = 0; x < gridSize.x; x++)
