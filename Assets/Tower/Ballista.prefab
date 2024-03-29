@@ -4893,6 +4893,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 75
+  baseMesh: {fileID: 8293807043288370748}
+  topMesh: {fileID: 6131056645070147807}
+  shooter: {fileID: 1296974751238369343}
+  buildDelay: 1
 --- !u!1 &6131056645070147807
 GameObject:
   m_ObjectHideFlags: 0
